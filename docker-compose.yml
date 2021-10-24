@@ -1,0 +1,26 @@
+version: '2'
+services:
+  server:
+    build:
+  context: ./auth/
+    command: /usr/app/auth/node_modules/.bin/nodemon api/index.js
+    volumes:
+      - ./auth/:/usr/app
+      - /usr/app/node_modules
+    ports:
+      - "4000:4000"
+    # env_file: ./server/.env # TODO - .env file!
+    environment:
+      - NODE_ENV=development
+      - CHOKIDAR_USEPOLLING=true
+  client:
+    build:
+      context: ./client/
+    command: npm start
+    volumes:
+      - ./client/:/usr/app
+      - /usr/app/node_modules
+    depends_on:
+      - server
+    ports:
+      - "3000:3000"

@@ -48,14 +48,6 @@ For production, this uses the Dockerfile at the root of the repo. It creates a s
 
 As a result, different code is executing to serve the React files, but all of the API calls should remain the same. The difference between development and production isn’t ideal, but it does offer the simplicity of having the entire app run in one server on one machine.
 
-This is one of multiple ways a Node + React app could be setup, as suggested [here](https://daveceddia.com/create-react-app-express-production/):
-
-- **Keep them together** - have Express serve both the API and React files
-- **Split them apart** - have Express API on one machine and the React files on another (e.g., on S3 and use CORS to access the API)
-- **Put the API behind a proxy** - use something like NGINX to proxy the Express API server and React static files separately
-
-This project uses the “keep them together” approach. For better performance, you can set up a proxy (like Cloudflare) in between your server and the Internet to cache the static files. Or with some extra work you can fashion it to do either of the other two options.
-
 ## Notes
 
 ### Using docker compose
