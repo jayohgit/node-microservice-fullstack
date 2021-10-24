@@ -1,0 +1,59 @@
+{
+  "name": "auth-service",
+  "version": "0.1.0",
+  "description": "GraphQL & Passport JS Password Strategy Authentication ",
+  "author": {
+    "name": "Jay Oh Git",
+    "email": "shlime@lavabit.com",
+    "url": "https://shlime.io"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/jayohgit/node-microservice-fullstack.git"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "@apollo/react-hooks": "^4.0.0",
+    "apollo-boost": "^0.4.9",
+    "apollo-server-express": "^2.9.6",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "express-session": "^1.17.0",
+    "graphql": "^14.5.8",
+    "graphql-passport": "^0.5.0",
+    "nodemon": "^1.19.3",
+    "passport": "^0.4.0",
+    "react": "^16.10.2",
+    "react-dom": "^16.10.2",
+    "react-scripts": "^3.3.0",
+    "uuid": "^3.3.3"
+  },
+  "scripts": {
+    "start": "npm run start:api",
+    "start:app": "react-scripts start",
+    "start:api": "nodemon --watch ./api --exec \"babel-node --inspect --presets=@babel/env ./api/index.js\"",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@babel/helper-compilation-targets": "^7.15.4",
+    "@babel/node": "^7.6.3",
+    "@babel/preset-env": "^7.15.8"
+  }
+}
